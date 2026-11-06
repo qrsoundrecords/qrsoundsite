@@ -1,0 +1,51 @@
+/*
+ * QR SOUND RECORDS — design tokens.
+ * Palette is derived from the label artwork: distressed off-white paper,
+ * black ink geometry, and one saturated disc per genre
+ * (pink = Indie Tech, purple = Melodic, red = Indie Dance, steel = Raw).
+ */
+:root {
+  /* Surfaces */
+  --bg-primary: #09090b;
+  --bg-secondary: #101013;
+  --bg-raised: #16161a;
+
+  /* Content */
+  --text-primary: #f2f0ec; /* cover paper white */
+  --text-secondary: #a3a09a;
+  --text-tertiary: #6d6a66;
+
+  /* Accents from the artwork discs */
+  --accent-purple: #7d5cff; /* Melodic House & Techno */
+  --accent-pink: #ff2d8f; /* Indie Tech / House */
+  --accent-red: #ff2b3a; /* Indie Dance */
+  --accent-steel: #b9bcc4; /* Raw / neutral */
+  --accent-glow: rgba(125, 92, 255, 0.35);
+
+  /* Lines & borders */
+  --border: rgba(242, 240, 236, 0.1);
+  --border-strong: rgba(242, 240, 236, 0.22);
+
+  /* Geometry */
+  --radius-s: 2px;
+  --radius-m: 4px;
+  --radius-l: 10px;
+
+  /* Rhythm */
+  --space-unit: 8px;
+  --space-s: calc(var(--space-unit) * 1);
+  --space-m: calc(var(--space-unit) * 2);
+  --space-l: calc(var(--space-unit) * 4);
+  --space-xl: calc(var(--space-unit) * 8);
+
+  /* Motion */
+  --dur-fast: 0.18s;
+  --dur-base: 0.32s;
+  --dur-slow: 0.65s;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Type */
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+}
