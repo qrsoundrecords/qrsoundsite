@@ -1,9 +1,10 @@
 import { seedRandom } from "@/lib/catalog";
+import { asset } from "@/lib/asset";
 
 /** Artist visual: real portrait when present, else an abstract QR-tower visual. */
 export function imageOrFallbackArtist(artist: { id: string; slug: string; name: string; image?: string }, accent: string) {
   if (artist.image) {
-    return <img src={artist.image} alt={`${artist.name} portrait`} loading="lazy" className="h-full w-full object-cover" />;
+    return <img src={asset(artist.image)} alt={`${artist.name} portrait`} loading="lazy" className="h-full w-full object-cover" />;
   }
   return (
     <div className="flex h-full w-full items-end justify-center overflow-hidden bg-[#0e0e12]">

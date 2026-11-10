@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>QR Sound Records — loading…</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      /*
+       * GitHub Pages has no SPA rewrites: any deep URL (e.g. /releases/citadel)
+       * returns this file. Remember the requested path and redirect to the app
+       * root (see "base" below); src/main.tsx restores the route afterwards.
+       *
+       * The base MUST match the repository name in the project Pages URL:
+       * https://<user>.github.io/qrsoundsite/  →  "/qrsoundsite/"
+       * (For a user/organization site served from the domain root use "/".)
+       */
+      var base = "/qrsoundsite/";
+      var path = location.pathname;
+      var rel = path.indexOf(base) === 0 ? path.slice(base.length) : "";
+      if (rel && rel !== "index.html") {
+        try {
+          sessionStorage.setItem("qrs-spa-path", "/" + rel + location.search + location.hash);
+        } catch (e) {}
+      }
+      location.replace(base);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -5,6 +5,7 @@ import { Search, X, CornerDownLeft } from "lucide-react";
 import { useSearch } from "@/hooks/useSearch";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import GeneratedCover from "@/components/releases/GeneratedCover";
+import { asset } from "@/lib/asset";
 import type { SearchHit } from "@/types";
 
 const TYPE_LABEL = {
@@ -144,7 +145,7 @@ export default function SearchOverlay({ onClose }: { onClose: () => void }) {
 
 function Thumbnail({ hit }: { hit: SearchHit }) {
   if (hit.image) {
-    return <img src={hit.image} alt="" loading="lazy" className="h-11 w-11 shrink-0 object-cover" />;
+    return <img src={asset(hit.image)} alt="" loading="lazy" className="h-11 w-11 shrink-0 object-cover" />;
   }
   return (
     <span className="h-11 w-11 shrink-0">

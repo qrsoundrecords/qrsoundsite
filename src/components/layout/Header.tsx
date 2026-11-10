@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
+import { asset } from "@/lib/asset";
 import MobileMenu from "./MobileMenu";
 import SearchOverlay from "@/components/search/SearchOverlay";
 
@@ -64,7 +65,7 @@ export default function Header() {
           {/* logo */}
           <Link to="/" aria-label="QR Sound Records — home" className="group flex items-center gap-3">
             <span className="relative flex h-9 w-9 items-center justify-center border border-line2 bg-bg2">
-              <img src={siteConfig.logo} alt="" className="h-7 w-7 object-contain" />
+              <img src={asset(siteConfig.logo)} alt="" className="h-7 w-7 object-contain" />
               <span className="absolute -inset-px border border-transparent transition-colors group-hover:border-pink" />
             </span>
             <span className="display text-[15px] font-bold uppercase tracking-[0.08em]">

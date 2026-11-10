@@ -182,7 +182,9 @@ navigate results, `Enter` opens the selected result.
 
 ## Deploy
 
-Any static host works. For Vercel (the `api/` folder is already set up):
+Any static host works.
+
+### Vercel (the `api/` folder is already set up)
 
 ```bash
 vercel                     # follow the prompts
@@ -190,6 +192,27 @@ vercel                     # follow the prompts
 ```
 
 `vercel.json` already rewrites all routes to `/index.html` (SPA).
+
+### GitHub Pages
+
+The repository ships with `.github/workflows/deploy.yml`, which runs
+`npm run build` on every push to `main` and publishes `dist/`.
+
+1. In the repo: **Settings → Pages → Source: "GitHub Actions"**
+   (choosing "Deploy from a branch" will serve the raw sources and 404).
+2. Push to `main` — the site appears at
+   `https://<user>.github.io/qrsoundsite/`.
+
+The build sets `BASE_PATH=/qrsoundsite/` (must match the repository name) so
+assets resolve on the sub-path; `public/404.html` + the restore snippet in
+`src/main.tsx` keep deep links (`/releases/citadel`) working despite Pages
+having no SPA rewrites. If you rename the repository or deploy to a user site
+at the domain root, update the base in three places: the workflow env, the
+comment in `public/404.html`, and nothing else — `src/main.tsx` reads
+`import.meta.env.BASE_URL` automatically.
+
+Note: the demo-submission endpoint needs a real server (Vercel `api/`); on
+GitHub Pages the form shows the "not configured" state by design.
 
 ---
 

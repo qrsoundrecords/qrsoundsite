@@ -5,6 +5,7 @@ import { Search as SearchIcon, CornerDownLeft } from "lucide-react";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useSearch } from "@/hooks/useSearch";
 import GeneratedCover from "@/components/releases/GeneratedCover";
+import { asset } from "@/lib/asset";
 import type { SearchHit } from "@/types";
 
 const TYPE_LABEL = {
@@ -66,7 +67,7 @@ export default function Search() {
                       className="group flex w-full items-center gap-4 py-3 text-left"
                     >
                       {hit.image ? (
-                        <img src={hit.image} alt="" loading="lazy" className="h-12 w-12 shrink-0 object-cover" />
+                        <img src={asset(hit.image)} alt="" loading="lazy" className="h-12 w-12 shrink-0 object-cover" />
                       ) : (
                         <span className="h-12 w-12 shrink-0">
                           <GeneratedCover seed={hit.id + hit.title} title={hit.title} accent={hit.accent} icon={false} />
